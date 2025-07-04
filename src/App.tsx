@@ -126,34 +126,36 @@ function App() {
   if (mode === 'select') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center p-8">
-        <div className="max-w-4xl w-full">
-          <div className="text-center mb-12">
+        <div className="max-w-6xl w-full">
+          <div className="text-center mb-16">
             {displaySettings.companyLogo && (
               <img
                 src={displaySettings.companyLogo}
                 alt="Company Logo"
-                className="mx-auto mb-6 h-24 w-24 object-contain rounded-full shadow-lg border-4 border-white/20 bg-white/10"
+                className="mx-auto mb-10 h-40 w-40 object-contain rounded-full shadow-2xl border-8 border-white/20 bg-white/10"
               />
             )}
-            <h1 className="text-5xl font-bold text-white mb-4">{displaySettings.companyTitle}</h1>
-            <p className="text-xl text-slate-300">{displaySettings.companySubtitle}</p>
+            <h1 className="text-8xl font-extrabold bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent mb-6">
+              {displaySettings.companyTitle}
+            </h1>
+            <p className="text-3xl text-slate-200 font-medium drop-shadow mb-2">{displaySettings.companySubtitle}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
             <button
               onClick={() => setMode('display')}
-              className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="group bg-white/10 backdrop-blur-lg border-2 border-white/30 rounded-3xl p-16 hover:bg-white/20 transition-all duration-300 transform hover:scale-110 shadow-2xl flex flex-col items-center focus:outline-none focus:ring-4 focus:ring-blue-400/40"
             >
-              <span className="block text-4xl mb-4">📺</span>
-              <h3 className="text-2xl font-semibold text-white mb-2">Display Mode</h3>
-              <p className="text-slate-300">Large screen dashboard for factory floor monitoring</p>
+              <span className="block text-7xl mb-8">📺</span>
+              <h3 className="text-5xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">Display Mode</h3>
+              <p className="text-2xl text-slate-200">Large screen dashboard for factory floor monitoring</p>
             </button>
             <button
               onClick={() => setMode('admin')}
-              className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="group bg-white/10 backdrop-blur-lg border-2 border-white/30 rounded-3xl p-16 hover:bg-white/20 transition-all duration-300 transform hover:scale-110 shadow-2xl flex flex-col items-center focus:outline-none focus:ring-4 focus:ring-blue-400/40"
             >
-              <span className="block text-4xl mb-4">🛠️</span>
-              <h3 className="text-2xl font-semibold text-white mb-2">Admin Portal</h3>
-              <p className="text-slate-300">Configure display settings and manage dashboard items</p>
+              <span className="block text-7xl mb-8">🛠️</span>
+              <h3 className="text-5xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">Admin Portal</h3>
+              <p className="text-2xl text-slate-200">Configure display settings and manage dashboard items</p>
             </button>
           </div>
         </div>

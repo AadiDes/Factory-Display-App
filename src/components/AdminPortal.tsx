@@ -194,36 +194,36 @@ function AdminPortal({ onBack }: AdminPortalProps) {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center p-8">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-xl">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors mb-8"
+            className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors mb-12 text-xl"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-7 w-7" />
             Back to Menu
           </button>
           
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Lock className="h-8 w-8 text-blue-600" />
+          <div className="bg-white rounded-3xl p-14 shadow-2xl">
+            <div className="text-center mb-10">
+              <div className="bg-blue-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                <Lock className="h-12 w-12 text-blue-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Admin Portal</h2>
-              <p className="text-gray-600">Sign in to manage dashboard settings</p>
+              <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Admin Portal</h2>
+              <p className="text-xl text-gray-600">Sign in to manage dashboard settings</p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-6">
+            <form onSubmit={handleLogin} className="space-y-8">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-lg font-semibold text-gray-700 mb-3">
                   Username
                 </label>
                 <div className="relative">
-                  <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                  <User className="absolute left-4 top-4 h-7 w-7 text-gray-400" />
                   <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-14 pr-4 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Enter username"
                     required
                   />
@@ -231,31 +231,31 @@ function AdminPortal({ onBack }: AdminPortalProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-lg font-semibold text-gray-700 mb-3">
                   Password
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                  <Lock className="absolute left-4 top-4 h-7 w-7 text-gray-400" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-14 pr-16 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Enter password"
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                    className="absolute right-4 top-4 text-gray-400 hover:text-gray-600"
                   >
-                    {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                    {showPassword ? <EyeOff className="h-6 w-6" /> : <Eye className="h-6 w-6" />}
                   </button>
                 </div>
               </div>
 
               {error && (
-                <div className="text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg p-3">
+                <div className="text-red-600 text-lg bg-red-50 border border-red-200 rounded-xl p-4">
                   {error}
                 </div>
               )}
@@ -263,11 +263,11 @@ function AdminPortal({ onBack }: AdminPortalProps) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl text-2xl font-bold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 {isLoading ? (
                   <>
-                    <RefreshCw className="h-5 w-5 animate-spin" />
+                    <RefreshCw className="h-7 w-7 animate-spin" />
                     Signing in...
                   </>
                 ) : (
@@ -276,10 +276,10 @@ function AdminPortal({ onBack }: AdminPortalProps) {
               </button>
             </form>
 
-            <div className="mt-6 text-center text-sm text-gray-500">
+            <div className="mt-8 text-center text-lg text-gray-500">
               <p>Demo credentials:</p>
-              <p>Username: <code className="bg-gray-100 px-1 rounded">manager</code></p>
-              <p>Password: <code className="bg-gray-100 px-1 rounded">password1</code></p>
+              <p>Username: <code className="bg-gray-100 px-2 rounded">manager</code></p>
+              <p>Password: <code className="bg-gray-100 px-2 rounded">password1</code></p>
             </div>
           </div>
         </div>
@@ -288,20 +288,20 @@ function AdminPortal({ onBack }: AdminPortalProps) {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gray-50 overflow-auto">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 overflow-auto">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-6">
           <div className="flex items-center justify-between">
             <button
               onClick={onBack}
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
               Back to Menu
             </button>
             <div className="flex items-center gap-4">
-              <span className="text-gray-600">Welcome, Manager</span>
+              <span className="text-blue-700">Welcome, Manager</span>
               <button
                 onClick={() => setIsAuthenticated(false)}
                 className="text-red-600 hover:text-red-700 font-medium"
@@ -313,37 +313,37 @@ function AdminPortal({ onBack }: AdminPortalProps) {
         </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto w-full px-2 md:px-8 py-6 md:py-8 space-y-8">
+      <div className="max-w-screen-xl mx-auto w-full px-2 md:px-8 py-8 md:py-12 space-y-10">
         {/* Display Settings */}
-        <div className="bg-white rounded-xl shadow-sm border p-4 md:p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">Display Settings</h2>
+        <div className="bg-white/90 rounded-2xl shadow-xl border border-blue-200 p-8 md:p-10">
+          <h2 className="text-2xl font-semibold text-blue-900 mb-6">Display Settings</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-800 mb-2">
                 Company Title
               </label>
               <input
                 type="text"
                 value={displaySettings.companyTitle}
                 onChange={e => setDisplaySettings(ds => ({ ...ds, companyTitle: e.target.value }))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent bg-blue-50"
                 placeholder="Enter company title"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-800 mb-2">
                 Company Subtitle
               </label>
               <input
                 type="text"
                 value={displaySettings.companySubtitle}
                 onChange={e => setDisplaySettings(ds => ({ ...ds, companySubtitle: e.target.value }))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent bg-blue-50"
                 placeholder="Enter company subtitle"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-800 mb-2">
                 Company Logo (PNG)
               </label>
               {displaySettings.companyLogo && !logoCropImage && (
@@ -351,7 +351,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                   <img
                     src={displaySettings.companyLogo}
                     alt="Logo Preview"
-                    className="h-20 w-20 object-contain rounded-full border border-gray-300 bg-gray-100 shadow"
+                    className="h-20 w-20 object-contain rounded-full border border-blue-200 bg-blue-50 shadow"
                   />
                   <button
                     type="button"
@@ -386,23 +386,23 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                       reader.readAsDataURL(file);
                     }
                   }}
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                  className="block w-full text-sm text-blue-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-800 hover:file:bg-blue-200"
                 />
               )}
-              <p className="text-xs text-gray-400 mt-1">Recommended: Square PNG, max 256x256px</p>
+              <p className="text-xs text-blue-400 mt-1">Recommended: Square PNG, max 256x256px</p>
             </div>
           </div>
         </div>
 
         {/* Page Selector & Add Image Page */}
-        <div className="bg-white rounded-xl shadow-sm border p-4 md:p-6 mb-8">
+        <div className="bg-white/90 rounded-2xl shadow-xl border border-blue-200 p-8 md:p-10 mb-10">
           <div className="flex items-center gap-6 mb-8">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Select Page</label>
+              <label className="block text-sm font-medium text-blue-800 mb-1">Select Page</label>
               <select
                 value={selectedPageIndex}
                 onChange={e => setSelectedPageIndex(Number(e.target.value))}
-                className="px-3 py-2 border border-gray-300 rounded-lg bg-white"
+                className="px-3 py-2 border border-blue-200 rounded-lg bg-blue-50"
               >
                 {(() => {
                   let imagePageCount = 0;
@@ -410,7 +410,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                     if (p.type === 'dashboard') {
                       return (
                         <option key={i} value={i}>
-                          📄 Data Page {i + 1}
+                          �� Data Page {i + 1}
                         </option>
                       );
                     } else {
@@ -431,10 +431,10 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                 type="checkbox"
                 checked={page.enabled}
                 onChange={e => setPages(prev => prev.map((p, i) => i === selectedPageIndex ? { ...p, enabled: e.target.checked } : p))}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-5 w-5 text-blue-700 focus:ring-blue-500 border-blue-200 rounded"
                 id="enable-page-toggle"
               />
-              <label htmlFor="enable-page-toggle" className="text-sm text-gray-700 font-medium">Enable this page</label>
+              <label htmlFor="enable-page-toggle" className="text-sm text-blue-800 font-medium">Enable this page</label>
             </div>
             {page.type === 'image' && (
               <button
@@ -448,7 +448,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
               </button>
             )}
             <button
-              className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg font-medium hover:bg-blue-200"
+              className="bg-blue-200 text-blue-900 px-4 py-2 rounded-lg font-medium hover:bg-blue-300"
               onClick={() => handleAddImagePage(selectedPageIndex + 1)}
             >
               + Add Image Page After
@@ -458,7 +458,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
           {/* Data Page Section */}
           {pages[selectedPageIndex]?.type === 'dashboard' && (
             <>
-              <h2 className="text-2xl font-bold mb-4">Display Page</h2>
+              <h2 className="text-2xl font-bold text-blue-900 mb-4">Display Page</h2>
               <DataPageEditor
                 page={pages[selectedPageIndex]}
                 editingItemId={editingItemId}
@@ -468,6 +468,8 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                 onCancelEdit={handleCancelEdit}
                 onItemToggle={handleItemToggle}
                 onResetPage={handleResetPage}
+                onUpdate={handleUpdate}
+                updateButtonText={updateButtonText}
                 setTempItemData={setTempItemData}
                 setPageDuration={duration => setPages(prev => prev.map((p, i) => i === selectedPageIndex ? { ...p, duration } : p))}
               />
@@ -477,12 +479,14 @@ function AdminPortal({ onBack }: AdminPortalProps) {
           {/* Image Page Section */}
           {pages[selectedPageIndex]?.type === 'image' && (
             <>
-              <h2 className="text-2xl font-bold mb-4">Image Page</h2>
+              <h2 className="text-2xl font-bold text-blue-900 mb-4">Image Page</h2>
               <ImagePageEditor
                 page={pages[selectedPageIndex]}
                 imageCropImage={imageCropImage}
                 setImageCropImage={setImageCropImage}
                 onSetImageData={data => setPages(prev => prev.map((p, i) => i === selectedPageIndex ? { ...p, imageData: data } : p))}
+                onUpdate={handleUpdate}
+                updateButtonText={updateButtonText}
                 setPageDuration={duration => setPages(prev => prev.map((p, i) => i === selectedPageIndex ? { ...p, duration } : p))}
                 setPageSize={(size, aspectRatio) => setPages(prev => prev.map((p, i) => i === selectedPageIndex ? { ...p, size, aspectRatio } : p))}
               />
@@ -494,7 +498,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
             <button
               id="update-button"
               onClick={handleUpdate}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors font-medium"
+              className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-colors font-medium"
             >
               {updateButtonText}
             </button>
@@ -502,9 +506,9 @@ function AdminPortal({ onBack }: AdminPortalProps) {
         </div>
 
         {/* Display Page Scheduler */}
-        <div className="bg-white rounded-xl shadow-sm border p-4 md:p-6 mb-8">
-          <h3 className="text-lg font-semibold mb-4">Display Page Scheduler</h3>
-          <p className="text-xs text-gray-500 mb-2">Change the order of enabled pages for display rotation.</p>
+        <div className="bg-white/90 rounded-2xl shadow-xl border border-blue-200 p-8 md:p-10 mb-10">
+          <h3 className="text-lg font-semibold text-blue-900 mb-4">Display Page Scheduler</h3>
+          <p className="text-xs text-blue-500 mb-2">Change the order of enabled pages for display rotation.</p>
           <ul className="space-y-2">
             {(() => {
               let imagePageCount = 0;
@@ -518,19 +522,19 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                   label = `Image Page ${imagePageCount}`;
                 }
                 return (
-                  <li key={pageIdx} className="flex items-center gap-3 bg-gray-50 rounded px-3 py-2 border border-gray-200">
+                  <li key={pageIdx} className="flex items-center gap-3 bg-blue-50 rounded px-3 py-2 border border-blue-100">
                     <span className="text-xl">{p.type === 'dashboard' ? '📄' : '📷'}</span>
-                    <span className="font-medium text-gray-700">{label}</span>
+                    <span className="font-medium text-blue-900">{label}</span>
                     {/* Thumbnail for image pages */}
                     {p.type === 'image' && p.imageData && (
                       <img
                         src={p.imageData}
                         alt="thumb"
-                        className="h-8 w-8 object-cover rounded border border-gray-300 bg-white/50"
+                        className="h-8 w-8 object-cover rounded border border-blue-200 bg-blue-50"
                       />
                     )}
                     {/* Duration indicator */}
-                    <span className="text-xs text-gray-500 ml-2">⏱ {p.duration}s</span>
+                    <span className="text-xs text-blue-500 ml-2">⏱ {p.duration}s</span>
                     <button
                       disabled={idx === 0}
                       onClick={() => setEnabledPageOrder(order => {
@@ -539,7 +543,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                         [newOrder[idx - 1], newOrder[idx]] = [newOrder[idx], newOrder[idx - 1]];
                         return newOrder;
                       })}
-                      className="ml-2 px-2 py-1 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50"
+                      className="ml-2 px-2 py-1 rounded bg-blue-200 text-blue-900 hover:bg-blue-300 disabled:opacity-50"
                       title="Move Up"
                     >↑</button>
                     <button
@@ -550,7 +554,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
                         [newOrder[idx + 1], newOrder[idx]] = [newOrder[idx], newOrder[idx + 1]];
                         return newOrder;
                       })}
-                      className="px-2 py-1 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50"
+                      className="px-2 py-1 rounded bg-blue-200 text-blue-900 hover:bg-blue-300 disabled:opacity-50"
                       title="Move Down"
                     >↓</button>
                   </li>
