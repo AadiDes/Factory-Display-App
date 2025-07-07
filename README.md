@@ -1,3 +1,9 @@
+
+![image](https://github.com/user-attachments/assets/6f723feb-1f78-48a9-9e2e-d10d70fd0562)
+![image](https://github.com/user-attachments/assets/d3fae7f1-82bb-4b00-ab0f-2aaa7b6644d4)
+![image](https://github.com/user-attachments/assets/d5a21120-98d3-4f0a-835f-14baacc6e363)
+
+
 # Factory Dashboard
 
 A modern, responsive factory dashboard for real-time monitoring and administration. Built with React, TypeScript, Vite, and Tailwind CSS.
