@@ -51,7 +51,7 @@ function AdminPortal({ onBack }: AdminPortalProps) {
     duration: 5,
   };
 
-  const handleLogin = async (e: React.FormEvent) => {
+const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
@@ -59,7 +59,10 @@ function AdminPortal({ onBack }: AdminPortalProps) {
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    if (username === 'manager' && password === 'password1') {
+    const adminUsername = import.meta.env.VITE_ADMIN_USERNAME || 'manager';
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'password1';
+
+    if (username === adminUsername && password === adminPassword) {
       setIsAuthenticated(true);
     } else {
       setError('Invalid username or password');
